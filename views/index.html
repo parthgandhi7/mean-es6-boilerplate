@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="birdsApp">
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
+        </script>
+        <script src="js/angular.min.js">
+        </script>
+        <script src="js/BirdsController.js">
+        </script>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+            <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css" rel="stylesheet">
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js">
+                </script>
+                <title>
+                    Birds
+                </title>
+            </link>
+        </link>
+    </head>
+    <body>
+        <form ng-controller="BirdsController as birds">
+            <div ng-init="birds.getAllBirds()">
+                Name:
+                <input ng-model="birds.model.name" type="text">
+                    Legs:
+                    <input ng-model="birds.model.legs" type="text">
+                        <button class="btn-primary" ng-click="birds.addBird(birds.model)">
+                            Add Bird
+                        </button>
+                        <div ng-repeat="bird in birds.allBirds track by $index">
+                            Name:
+                            <span ng-bind="bird.name">
+                            </span>
+                            <br/>
+                            Legs:
+                            <span ng-bind="bird.legs">
+                            </span>
+                        </div>
+            </div>
+        </form>
+    </body>
+</html>
