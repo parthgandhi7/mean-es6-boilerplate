@@ -1,1 +1,1 @@
-Small Express boiler plate with grunt integrated for code styling and linting and mongodb connections. MVC format express boiler plate. 
+Mean stack boiler plate with es6 and mongodb connections.
